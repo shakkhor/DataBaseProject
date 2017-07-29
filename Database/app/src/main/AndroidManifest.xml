@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.shakkhor.database">
 
     <application
@@ -16,6 +17,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SignUpActivity">
+            <intent-filter>
+                <action android:name="com.example.shakkhor.database.SignUpActivity" />
+
+                <category android:name="android.intent.category.APP_BROWSER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".UserActivity"
             android:label="@string/title_activity_user"
@@ -30,7 +38,19 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".DrugByClassActivity"></activity>
+        <activity
+            android:name=".DrugByClassActivity"
+            android:parentActivityName=".UserActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.shakkhor.database.UserActivity" />
+
+            <intent-filter>
+                <action android:name="com.example.shakkhor.database.DrugByClassActivity" />
+
+                <category android:name="android.intent.category.APP_BROWSER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
