@@ -11,37 +11,19 @@ import android.widget.ListView;
 
 public class DrugByClassActivity extends AppCompatActivity {
 
-    String[] Drug= {"Drug1", "Drug2", "Drug3", "Drug4", "Drug5", "Drug6", "Drug7", "Drug8"};
+    private static ListView listView;
+    private static String[] Drugs= new String[]{"Drug1", "Drug2", "Drug3", "Drug4", "Drug5", "Drug6", "Drug7", "Drug8"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drug_by_class);
-
-
-
-        ListView listView = (ListView)findViewById(R.id.listView);
+        listView();
     }
 
-    class CustomAdapter extends BaseAdapter{
-
-        @Override
-        public int getCount() {
-            return Drug.length;
-        }
-
-        @Override
-        public Object getItem(int position) {
-            return null;
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return 0;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            return null;
-        }
+    public void listView(){
+        listView = (ListView)findViewById(R.id.listView);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.drug_list,Drugs);
+        listView.setAdapter(adapter);
     }
+
 }
