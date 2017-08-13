@@ -38,19 +38,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".DrugByClassActivity"
-            android:parentActivityName=".UserActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.shakkhor.database.UserActivity" />
-
-            <intent-filter>
-                <action android:name="com.example.shakkhor.database.DrugByClassActivity" />
-
-                <category android:name="android.intent.category.APP_BROWSER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>
