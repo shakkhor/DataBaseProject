@@ -56,9 +56,9 @@ public class DatabaseAccess {
     }
 
     /**
-     * Read all quotes from the database.
+     * Read all drugs from the database.
      *
-     * @return a List of quotes
+     * @return a List of drugs
      */
     public List<String> getQuotes() {
         List<String> list = new ArrayList<>();

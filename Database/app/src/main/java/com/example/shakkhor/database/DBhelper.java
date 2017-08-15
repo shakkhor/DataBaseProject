@@ -19,7 +19,7 @@ import java.util.zip.ZipInputStream;
 
 public class DBhelper extends SQLiteAssetHelper {
 
-    private static final String DATABASE_NAME = "example.db";
+    private static final String DATABASE_NAME = "Medicine.db";
     private static final int DATABASE_VERSION = 1;
 
     public DBhelper(Context context) {
