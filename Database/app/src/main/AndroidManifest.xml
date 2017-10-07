@@ -26,16 +26,75 @@
         </activity>
         <activity
             android:name=".UserActivity"
-            android:label="@string/title_activity_user"
-            android:parentActivityName=".LoginActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.shakkhor.database.LoginActivity" />
+            android:label="@string/title_activity_user">
 
             <intent-filter>
                 <action android:name="com.example.shakkhor.database.UserActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Search">
+            <intent-filter>
+                <action android:name="com.example.shakkhor.database.Search" />
+
+                <category android:name="android.intent.category.APP_BROWSER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Drug_By_Indication">
+            <intent-filter>
+                <action android:name="com.example.shakkhor.database.Drug_By_Indication" />
+
+                <category android:name="android.intent.category.APP_BROWSER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".My_Visiting_Card">
+            <intent-filter>
+                <action android:name="com.example.shakkhor.database.My_Visiting_Card" />
+
+                <category android:name="android.intent.category.APP_BROWSER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Drug_By_Class">
+            <intent-filter>
+                <action android:name="com.example.shakkhor.database.Drug_By_Class" />
+
+                <category android:name="android.intent.category.APP_BROWSER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Medical_News">
+            <intent-filter>
+                <action android:name="com.example.shakkhor.database.Medical_News" />
+
+                <category android:name="android.intent.category.APP_BROWSER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Favorite_Drug">
+            <intent-filter>
+                <action android:name="com.example.shakkhor.database.Favorite_Drug" />
+
+                <category android:name="android.intent.category.APP_BROWSER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Add_Drug">
+            <intent-filter>
+                <action android:name="com.example.shakkhor.database.Add_Drug" />
+
+                <category android:name="android.intent.category.APP_BROWSER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Mini_Prescription">
+            <intent-filter>
+                <action android:name="com.example.shakkhor.database.Mini_Prescription" />
+
+                <category android:name="android.intent.category.APP_BROWSER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Job">
+            <intent-filter>
+                <action android:name="com.example.shakkhor.database.Job" />
+
+                <category android:name="android.intent.category.APP_BROWSER" />
             </intent-filter>
         </activity>
     </application>

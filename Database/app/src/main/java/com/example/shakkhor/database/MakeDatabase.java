@@ -6,15 +6,18 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+
 /**
  * Created by shakkhor on 7/23/17.
  */
 
 public class MakeDatabase  extends SQLiteOpenHelper {
 
-    private static final int Database_Version = 1;
+
     SQLiteDatabase db;
     public static final String Database_Name = "Medicine.db";
+    private static final int Database_Version = 1;
 
     public static final String Table1  = "User";
     public static final String T1_Col1 = "User_ID";
@@ -56,7 +59,7 @@ public class MakeDatabase  extends SQLiteOpenHelper {
 
     public static final String Table7  = "Indication";
     public static final String T7_Col1 = "Indication_ID";
-    public static final String T7_Col2 = "Indiacation_Name";
+    public static final String T7_Col2 = "Indication_Name";
 
 
 
@@ -68,13 +71,166 @@ public class MakeDatabase  extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table " +Table1 + " (User_ID INTEGER PRIMARY KEY, User_Name TEXT, User_Email TEXT, User_Password TEXT)");
-        db.execSQL("create table " +Table2 + " (Drug_ID INTEGER PRIMARY KEY AUTOINCREAMENT, Drug_Name TEXT, Drug_Genre INTEGER, Drug_Form TEXT, Drug_Strength TEXT, Drug_Company INTEGER, Drug_Indication INTEGER, Drug_Class INTEGER)");
-        db.execSQL("create table " +Table3 + " (Class_ID INTEGER PRIMARY KEY AUTOINCREAMENT, Class_Name TEXT)");
-        db.execSQL("create table " +Table4 + " (Company_ID INTEGER PRIMARY KEY AUTOINCREAMENT, Company_Name TEXT, Company_Class INTEGER, Company_Genre INTEGER, Company_Indication INTEGER)");
-        db.execSQL("create table " +Table5 + " (Genre_ID INTEGER PRIMARY KEY AUTOINCREAMENT, Genre_Name TEXT)");
+        db.execSQL("create table " +Table2 + " (Drug_ID INTEGER PRIMARY KEY, Drug_Name TEXT, Drug_Genre INTEGER, Drug_Form TEXT, Drug_Strength TEXT, Drug_Company INTEGER, Drug_Indication INTEGER, Drug_Class INTEGER)");
+        db.execSQL("create table " +Table3 + " (Class_ID INTEGER PRIMARY KEY, Class_Name TEXT)");
+        db.execSQL("create table " +Table4 + " (Company_ID INTEGER PRIMARY KEY, Company_Name TEXT, Company_Class INTEGER, Company_Genre INTEGER, Company_Indication INTEGER)");
+        db.execSQL("create table " +Table5 + " (Genre_ID INTEGER PRIMARY KEY, Genre_Name TEXT)");
         db.execSQL("create table " +Table6 + " (User_ID INTEGER, Drug_ID INTEGER)");
-        db.execSQL("create table " +Table7 + " (Indication_ID PRIMARY KEY AUTOINCREAMENT, Indication_Name TEXT)");
+        db.execSQL("create table " +Table7 + " (Indication_ID PRIMARY KEY, Indication_Name TEXT)");
         this.db = db;
+        insertClasses(db);
+        insertIndications(db);
+    }
+    public void insertIndications(SQLiteDatabase db){
+        //db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        String query = "select * from " + Table7;
+        Cursor cursor = db.rawQuery(query, null);
+        int count = cursor.getCount();
+
+        values.put(T7_Col1, count);
+        values.put(T7_Col2, "Fever ans Mild to moderate pain such as osteoarthritis, rheumatoid arthritis, chronic low back pain, Renal stone postoperative mild to moderate pain");
+        db.insert(Table7, null, values);
+        count++;
+
+        values.put(T7_Col1, count);
+        values.put(T7_Col2, "Cardian arrest, Anaphylaxiz, Superficial bleeding, acute asthma");
+        db.insert(Table7, null, values);
+        count++;
+
+        values.put(T7_Col1, count);
+        values.put(T7_Col2, "Bacterial Ear Infection");
+        db.insert(Table7, null, values);
+        count++;
+
+        values.put(T7_Col1, count);
+        values.put(T7_Col2, "Diaabetes Mellitus");
+        db.insert(Table7, null, values);
+        count++;
+
+        values.put(T7_Col1, count);
+        values.put(T7_Col2, "Protection from harmful UV rays. Ideal for those with photodermatoses & reduced skin pigmentation, sunblock");
+        db.insert(Table7, null, values);
+        count++;
+
+        values.put(T7_Col1, count);
+        values.put(T7_Col2, "Major depressive disorder");
+        db.insert(Table7, null, values);
+        count++;
+
+        values.put(T7_Col1, count);
+        values.put(T7_Col2, "Chronic hepatitis B");
+        db.insert(Table7, null, values);
+        count++;
+
+        values.put(T7_Col1, count);
+        values.put(T7_Col2, "Cryptococcal meningtitis, candidiasis, tinea pedis, tinea cruris, tines corporis, Vaginal candidiatis, onychomycosis, Coccidiodomycosis, Cryptococcosis, Histoplasmosis, Mucosal Candidiasis, Candidal balanitis, Dermatophytosis");
+        db.insert(Table7, null, values);
+        count++;
+    }
+
+    public ArrayList<String> getIndications(){
+        ArrayList<String> indications = new ArrayList<String>();
+        db = this.getReadableDatabase();
+        String query = "select Indication_Name from " + Table7;
+        Cursor cursor = db.rawQuery(query, null);
+        if(cursor.moveToFirst()){
+            do{
+                indications.add(cursor.getString(0));
+            }while (cursor.moveToNext());
+        }
+
+        return indications;
+    }
+
+    public void insertClasses(SQLiteDatabase db){
+        //db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        String query = "select * from " + Table3;
+        Cursor cursor = db.rawQuery(query, null);
+        int count = cursor.getCount();
+
+        values.put(T3_Col1, count);
+        values.put(T3_Col2, "Non Opiod Analgesic");
+        db.insert(Table3, null, values);
+        count++;
+
+        values.put(T3_Col1, count);
+        values.put(T3_Col2, "Anaphylaxis");
+        db.insert(Table3, null, values);
+        count++;
+
+        values.put(T3_Col1, count);
+        values.put(T3_Col2, "Aural Preparation");
+        db.insert(Table3, null, values);
+        count++;
+
+        values.put(T3_Col1, count);
+        values.put(T3_Col2, "Anti-diabetic (oral Hypoglycemic drugs)");
+        db.insert(Table3, null, values);
+        count++;
+
+        values.put(T3_Col1, count);
+        values.put(T3_Col2, "Sunblock Preperation");
+        db.insert(Table3, null, values);
+        count++;
+
+        values.put(T3_Col1, count);
+        values.put(T3_Col2, "Atypical anti-depressent drugs");
+        db.insert(Table3, null, values);
+        count++;
+
+        values.put(T3_Col1, count);
+        values.put(T3_Col2, "Anti histamine Preparation");
+        db.insert(Table3, null, values);
+        count++;
+
+        values.put(T3_Col1, count);
+        values.put(T3_Col2, "Hepatic viral infection (Hepatitis \uD83D\uDE0E)");
+        db.insert(Table3, null, values);
+        count++;
+
+        values.put(T3_Col1, count);
+        values.put(T3_Col2, "Drugs for cuteneous mycosis");
+        db.insert(Table3, null, values);
+        count++;
+
+        values.put(T3_Col1, count);
+        values.put(T3_Col2, "Drugs for Iron Deficiancy Anemia");
+        db.insert(Table3, null, values);
+        count++;
+
+        values.put(T3_Col1, count);
+        values.put(T3_Col2, "Thyroid drugs & hormones");
+        db.insert(Table3, null, values);
+        count++;
+
+        values.put(T3_Col1, count);
+        values.put(T3_Col2, "Drugs for Hemorrhagic Stroke");
+        db.insert(Table3, null, values);
+        count++;
+
+        values.put(T3_Col1, count);
+        values.put(T3_Col2, "Drugs for bone formation");
+        db.insert(Table3, null, values);
+        count++;
+
+    }
+
+    public ArrayList<String> getClasses(){
+        ArrayList<String> classes = new ArrayList<String>();
+        db = this.getReadableDatabase();
+        String query = "select Class_Name from " + Table3;
+        Cursor cursor = db.rawQuery(query, null);
+        if(cursor.moveToFirst()){
+            do{
+                classes.add(cursor.getString(0));
+            }while (cursor.moveToNext());
+        }
+
+        return classes;
     }
 
     public void insertUserDetails(User c){
@@ -118,6 +274,18 @@ public class MakeDatabase  extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         String query = "DROP TABLE IF EXISTS "+Table1;
+        db.execSQL(query);
+        query = "DROP TABLE IF EXISTS "+Table2;
+        db.execSQL(query);
+        query = "DROP TABLE IF EXISTS "+Table3;
+        db.execSQL(query);
+        query = "DROP TABLE IF EXISTS "+Table4;
+        db.execSQL(query);
+        query = "DROP TABLE IF EXISTS "+Table5;
+        db.execSQL(query);
+        query = "DROP TABLE IF EXISTS "+Table6;
+        db.execSQL(query);
+        query = "DROP TABLE IF EXISTS "+Table7;
         db.execSQL(query);
         this.onCreate(db);
     }
