@@ -3,6 +3,7 @@ package com.example.shakkhor.database;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,12 +21,15 @@ public class Drug_By_Class extends AppCompatActivity {
     ListView listView;
     ArrayAdapter<String> adapter;
     ArrayList<String> classes;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drug__by__class);
         //Toast.makeText(Drug_By_Class.this, "Drug By Class Activity", Toast.LENGTH_LONG).show();
+        toolbar = (Toolbar)findViewById(R.id.app_bar);
+        setSupportActionBar(toolbar);
 
         classes = helper.getClasses();
         Collections.sort(classes);

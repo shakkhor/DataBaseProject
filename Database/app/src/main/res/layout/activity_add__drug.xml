@@ -6,4 +6,10 @@
     android:layout_height="match_parent"
     tools:context="com.example.shakkhor.database.Add_Drug">
 
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar">
+
+    </include>
+
 </android.support.constraint.ConstraintLayout>

@@ -2,6 +2,7 @@ package com.example.shakkhor.database;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -15,6 +16,7 @@ import java.util.Collections;
 public class Drug_By_Indication extends AppCompatActivity {
 
 
+    Toolbar toolbar;
     MakeDatabase helper = new MakeDatabase(this);
     ListView listView;
     ArrayAdapter<String> adapter;
@@ -24,7 +26,8 @@ public class Drug_By_Indication extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drug__by__indication);
         //Toast.makeText(Drug_By_Indication.this, "Drug By Indication Activity", Toast.LENGTH_LONG).show();
-
+        toolbar = (Toolbar)findViewById(R.id.app_bar);
+        setSupportActionBar(toolbar);
         indications = helper.getIndications();
         Collections.sort(indications);
         listView = (ListView)findViewById(R.id.list_indication);

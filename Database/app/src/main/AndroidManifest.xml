@@ -26,11 +26,7 @@
         </activity>
         <activity
             android:name=".UserActivity"
-            android:label="@string/title_activity_user"
-            android:parentActivityName=".LoginActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.shakkhor.database.LoginActivity" />
+            android:label="@string/title_activity_user">
 
             <intent-filter>
                 <action android:name="com.example.shakkhor.database.UserActivity" />
