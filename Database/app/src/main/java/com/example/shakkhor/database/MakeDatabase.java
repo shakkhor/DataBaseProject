@@ -80,6 +80,7 @@ public class MakeDatabase  extends SQLiteOpenHelper {
         this.db = db;
         insertClasses(db);
         insertIndications(db);
+        insertGenre(db);
     }
     public void insertIndications(SQLiteDatabase db){
         //db = this.getWritableDatabase();
@@ -231,6 +232,109 @@ public class MakeDatabase  extends SQLiteOpenHelper {
         }
 
         return classes;
+    }
+
+    public void insertGenre(SQLiteDatabase db){
+        ContentValues values = new ContentValues();
+
+        String query = "select * from " + Table5;
+        Cursor cursor = db.rawQuery(query, null);
+        int count = cursor.getCount();
+
+        values.put(T5_Col1, count);
+        values.put(T5_Col2, "Paracetamol");
+        db.insert(Table5, null, values);
+        count++;
+
+        values.put(T5_Col1, count);
+        values.put(T5_Col2, "Adrenalin");
+        db.insert(Table5, null, values);
+        count++;
+
+        values.put(T5_Col1, count);
+        values.put(T5_Col2, "Chloramphenicol ear drops");
+        db.insert(Table5, null, values);
+        count++;
+
+        values.put(T5_Col1, count);
+        values.put(T5_Col2, "Voglibose");
+        db.insert(Table5, null, values);
+        count++;
+
+        values.put(T5_Col1, count);
+        values.put(T5_Col2, "Microfine zinc oxide 15%");
+        db.insert(Table5, null, values);
+        count++;
+
+        values.put(T5_Col1, count);
+        values.put(T5_Col2, "Agomelatin");
+        db.insert(Table5, null, values);
+        count++;
+
+        values.put(T5_Col1, count);
+        values.put(T5_Col2, "Pizotifen");
+        db.insert(Table5, null, values);
+        count++;
+
+        values.put(T5_Col1, count);
+        values.put(T5_Col2, "Adefovir Dipivoxil");
+        db.insert(Table5, null, values);
+        count++;
+
+        values.put(T5_Col1, count);
+        values.put(T5_Col2, "Flugal 200");
+        db.insert(Table5, null, values);
+        count++;
+
+        values.put(T5_Col1, count);
+        values.put(T5_Col2, "Iron+Folic acid+Vitamin B+Vitamin C");
+        db.insert(Table5, null, values);
+        count++;
+
+        values.put(T5_Col1, count);
+        values.put(T5_Col2, "Thyroxine/LEvothyroxine Sodium");
+        db.insert(Table5, null, values);
+        count++;
+
+        values.put(T5_Col1, count);
+        values.put(T5_Col2, "Mannitol 20%");
+        db.insert(Table5, null, values);
+        count++;
+
+        values.put(T5_Col1, count);
+        values.put(T5_Col2, "Alfacalcidol");
+        db.insert(Table5, null, values);
+        count++;
+
+        values.put(T5_Col1, count);
+        values.put(T5_Col2, "Nandrolone");
+        db.insert(Table5, null, values);
+        count++;
+
+        values.put(T5_Col1, count);
+        values.put(T5_Col2, "Triamcinolone Acetonide");
+        db.insert(Table5, null, values);
+        count++;
+
+        values.put(T5_Col1, count);
+        values.put(T5_Col2, "Oxaprozin");
+        db.insert(Table5, null, values);
+        count++;
+
+        values.put(T5_Col1, count);
+        values.put(T5_Col2, "Flurbiprufen");
+        db.insert(Table5, null, values);
+        count++;
+
+        values.put(T5_Col1, count);
+        values.put(T5_Col2, "Loperamide");
+        db.insert(Table5, null, values);
+        count++;
+
+        values.put(T5_Col1, count);
+        values.put(T5_Col2, "Ispaghula Husk+Mebeverine Hydrochloride");
+        db.insert(Table5, null, values);
+        count++;
     }
 
     public void insertUserDetails(User c){
