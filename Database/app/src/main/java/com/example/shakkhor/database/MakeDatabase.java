@@ -81,6 +81,7 @@ public class MakeDatabase  extends SQLiteOpenHelper {
         insertClasses(db);
         insertIndications(db);
         insertGenre(db);
+        insertCompany(db);
     }
     public void insertIndications(SQLiteDatabase db){
         //db = this.getWritableDatabase();
@@ -353,6 +354,363 @@ public class MakeDatabase  extends SQLiteOpenHelper {
         db.insert(Table1, null, values);
 
         db.close();
+    }
+    public void insertCompany(SQLiteDatabase db){
+        String query = "select * from " + Table4;
+        Cursor cursor = db.rawQuery(query, null);
+        int count = cursor.getCount();
+
+        ContentValues values = new ContentValues();
+
+        values.put(T4_Col1,count);
+        values.put(T4_Col2,"Amico Laboratories Ltd.");
+        values.put(T4_Col3,"0");
+        values.put(T4_Col4,"0");
+        values.put(T4_Col5,"0");
+        db.insert(Table4, null, values);
+        count++;
+
+        values.put(T4_Col1,count);
+        values.put(T4_Col2,"G.A. Company Ltd.");
+        values.put(T4_Col3,"1");
+        values.put(T4_Col4,"1");
+        values.put(T4_Col5,"1");
+        db.insert(Table4, null, values);
+        count++;
+
+        values.put(T4_Col1,count);
+        values.put(T4_Col2,"Renata Limited");
+        values.put(T4_Col3,"2");
+        values.put(T4_Col4,"2");
+        values.put(T4_Col5,"2");
+        db.insert(Table4, null, values);
+        count++;
+
+        values.put(T4_Col1,count);
+        values.put(T4_Col2,"Beximco PharmaCeutical");
+        values.put(T4_Col3,"3");
+        values.put(T4_Col4,"3");
+        values.put(T4_Col5,"3");
+        db.insert(Table4, null, values);
+        count++;
+
+        values.put(T4_Col1,count);
+        values.put(T4_Col2,"GlaxoSmithKline Bangladesh Ltd.");
+        values.put(T4_Col3,"4");
+        values.put(T4_Col4,"4");
+        values.put(T4_Col5,"4");
+        db.insert(Table4, null, values);
+        count++;
+
+        values.put(T4_Col1,count);
+        values.put(T4_Col2,"Beacon Pharmaceuticals Ltd.");
+        values.put(T4_Col3,"5");
+        values.put(T4_Col4,"5");
+        values.put(T4_Col5,"5");
+        db.insert(Table4, null, values);
+        count++;
+
+        values.put(T4_Col1,count);
+        values.put(T4_Col2,"Opsonin Pharma Limited");
+        values.put(T4_Col3,"6");
+        values.put(T4_Col4,"6");
+        values.put(T4_Col5,"6");
+        db.insert(Table4, null, values);
+        count++;
+
+        values.put(T4_Col1,count);
+        values.put(T4_Col2,"Techno Drugs Ltd.");
+        values.put(T4_Col3,"6");
+        values.put(T4_Col4,"6");
+        values.put(T4_Col5,"6");
+        db.insert(Table4, null, values);
+        count++;
+
+        values.put(T4_Col1,count);
+        values.put(T4_Col2,"Square Pharmaceuticals Ltd.");
+        values.put(T4_Col3,"7");
+        values.put(T4_Col4,"7");
+        values.put(T4_Col5,"7");
+        db.insert(Table4, null, values);
+        count++;
+
+
+        values.put(T4_Col1,count);
+        values.put(T4_Col2,"Leo Pharmaceutical products, Denmark");
+        values.put(T4_Col3,"12");
+        values.put(T4_Col4,"12");
+        values.put(T4_Col5,"12");
+        db.insert(Table4, null, values);
+        count++;
+
+
+        values.put(T4_Col1,count);
+        values.put(T4_Col2,"Incepta Pharmaceutical Ltd.");
+        values.put(T4_Col3,"14");
+        values.put(T4_Col4,"14");
+        values.put(T4_Col5,"14");
+        db.insert(Table4, null, values);
+        count++;
+
+        values.put(T4_Col1,count);
+        values.put(T4_Col2,"ACI limited");
+        values.put(T4_Col3,"15");
+        values.put(T4_Col4,"15");
+        values.put(T4_Col5,"15");
+        db.insert(Table4, null, values);
+        count++;
+
+        values.put(T4_Col1,count);
+        values.put(T4_Col2,"General Pharmaceuticals Ltd.");
+        values.put(T4_Col3,"16");
+        values.put(T4_Col4,"16");
+        values.put(T4_Col5,"16");
+        db.insert(Table4, null, values);
+        count++;
+
+        values.put(T4_Col1,count);
+        values.put(T4_Col2,"G.A. Company Ltd.");
+        values.put(T4_Col3,"1");
+        values.put(T4_Col4,"1");
+        values.put(T4_Col5,"1");
+        db.insert(Table4, null, values);
+        count++;
+
+
+    }
+
+    public void insertDrugs(SQLiteDatabase db){
+
+        String query = "select * from " + Table4;
+        Cursor cursor = db.rawQuery(query, null);
+        int count = cursor.getCount();
+
+        ContentValues values = new ContentValues();
+
+        values.put(T2_Col1,count);
+        values.put(T2_Col2,"Para");
+        values.put(T2_Col3,"0");
+        values.put(T2_Col4,"Tablet");
+        values.put(T2_Col5,"500 mg");
+        values.put(T2_Col6,"0");
+        values.put(T2_Col7,"0");
+        values.put(T2_Col8,"0");
+        db.insert(Table4, null, values);
+        count++;
+
+
+        values.put(T2_Col1,count);
+        values.put(T2_Col2,"Adrin");
+        values.put(T2_Col3,"1");
+        values.put(T2_Col4,"Injection");
+        values.put(T2_Col5,"1 mg");
+        values.put(T2_Col6,"1");
+        values.put(T2_Col7,"1");
+        values.put(T2_Col8,"1");
+        db.insert(Table4, null, values);
+        count++;
+
+        values.put(T2_Col1,count);
+        values.put(T2_Col2,"Chloramex E/E");
+        values.put(T2_Col3,"2");
+        values.put(T2_Col4,"Ear drops");
+        values.put(T2_Col5,"0.5%");
+        values.put(T2_Col6,"2");
+        values.put(T2_Col7,"2");
+        values.put(T2_Col8,"2");
+        db.insert(Table4, null, values);
+        count++;
+
+        values.put(T2_Col1,count);
+        values.put(T2_Col2,"Vibose");
+        values.put(T2_Col3,"3");
+        values.put(T2_Col4,"Tablet");
+        values.put(T2_Col5,"300 mg");
+        values.put(T2_Col6,"3");
+        values.put(T2_Col7,"3");
+        values.put(T2_Col8,"3");
+        db.insert(Table4, null, values);
+        count++;
+
+        values.put(T2_Col1,count);
+        values.put(T2_Col2,"Spectraban 19");
+        values.put(T2_Col3,"4");
+        values.put(T2_Col4,"Cream");
+        values.put(T2_Col5,"15%");
+        values.put(T2_Col6,"4");
+        values.put(T2_Col7,"4");
+        values.put(T2_Col8,"4");
+        db.insert(Table4, null, values);
+        count++;
+
+        values.put(T2_Col1,count);
+        values.put(T2_Col2,"Agotin");
+        values.put(T2_Col3,"5");
+        values.put(T2_Col4,"Tablet");
+        values.put(T2_Col5,"25 mg");
+        values.put(T2_Col6,"5");
+        values.put(T2_Col7,"5");
+        values.put(T2_Col8,"5");
+        db.insert(Table4, null, values);
+        count++;
+
+        values.put(T2_Col1,count);
+        values.put(T2_Col2,"Pifen");
+        values.put(T2_Col3,"6");
+        values.put(T2_Col4,"Tablet");
+        values.put(T2_Col5,"500mg");
+        values.put(T2_Col6,"6");
+        values.put(T2_Col7,"6");
+        values.put(T2_Col8,"6");
+        db.insert(Table4, null, values);
+        count++;
+
+        values.put(T2_Col1,count);
+        values.put(T2_Col2,"Migofen");
+        values.put(T2_Col3,"6");
+        values.put(T2_Col4,"Tablet");
+        values.put(T2_Col5,"1.5mg");
+        values.put(T2_Col6,"7");
+        values.put(T2_Col7,"6");
+        values.put(T2_Col8,"6");
+        db.insert(Table4, null, values);
+        count++;
+
+        values.put(T2_Col1,count);
+        values.put(T2_Col2,"Adovir");
+        values.put(T2_Col3,"7");
+        values.put(T2_Col4,"Tablet");
+        values.put(T2_Col5,"10mg");
+        values.put(T2_Col6,"2");
+        values.put(T2_Col7,"7");
+        values.put(T2_Col8,"7");
+        db.insert(Table4, null, values);
+        count++;
+
+        values.put(T2_Col1,count);
+        values.put(T2_Col2,"Flugal");
+        values.put(T2_Col3,"8");
+        values.put(T2_Col4,"Capsule");
+        values.put(T2_Col5,"200mg");
+        values.put(T2_Col6,"8");
+        values.put(T2_Col7,"8");
+        values.put(T2_Col8,"8");
+        db.insert(Table4, null, values);
+        count++;
+
+        values.put(T2_Col1,count);
+        values.put(T2_Col2,"Fefovit");
+        values.put(T2_Col3,"9");
+        values.put(T2_Col4,"Capsule");
+        values.put(T2_Col5,"2mg");
+        values.put(T2_Col6,"4");
+        values.put(T2_Col7,"9");
+        values.put(T2_Col8,"9");
+        db.insert(Table4, null, values);
+        count++;
+
+
+        values.put(T2_Col1,count);
+        values.put(T2_Col2,"Thyrin 50");
+        values.put(T2_Col3,"10");
+        values.put(T2_Col4,"Tablet");
+        values.put(T2_Col5,"50mg");
+        values.put(T2_Col6,"8");
+        values.put(T2_Col7,"10");
+        values.put(T2_Col8,"10");
+        db.insert(Table4, null, values);
+        count++;
+
+        values.put(T2_Col1,count);
+        values.put(T2_Col2,"Osmosol 20% IV");
+        values.put(T2_Col3,"11");
+        values.put(T2_Col4,"Infusion");
+        values.put(T2_Col5,"20%");
+        values.put(T2_Col6,"3");
+        values.put(T2_Col7,"11");
+        values.put(T2_Col8,"11");
+        db.insert(Table4, null, values);
+        count++;
+
+        values.put(T2_Col1,count);
+        values.put(T2_Col2,"One Alpha");
+        values.put(T2_Col3,"12");
+        values.put(T2_Col4,"Capsule");
+        values.put(T2_Col5,"0.25mcg");
+        values.put(T2_Col6,"9");
+        values.put(T2_Col7,"12");
+        values.put(T2_Col8,"12");
+        db.insert(Table4, null, values);
+        count++;
+
+        values.put(T2_Col1,count);
+        values.put(T2_Col2,"Nandron");
+        values.put(T2_Col3,"13");
+        values.put(T2_Col4,"Injection");
+        values.put(T2_Col5,"25 mg");
+        values.put(T2_Col6,"2");
+        values.put(T2_Col7,"13");
+        values.put(T2_Col8,"13");
+        db.insert(Table4, null, values);
+        count++;
+
+
+        values.put(T2_Col1,count);
+        values.put(T2_Col2,"Cenolon Injection");
+        values.put(T2_Col3,"14");
+        values.put(T2_Col4,"Injection");
+        values.put(T2_Col5,"40");
+        values.put(T2_Col6,"10");
+        values.put(T2_Col7,"14");
+        values.put(T2_Col8,"14");
+        db.insert(Table4, null, values);
+        count++;
+
+        values.put(T2_Col1,count);
+        values.put(T2_Col2,"Demarin");
+        values.put(T2_Col3,"15");
+        values.put(T2_Col4,"Tablet");
+        values.put(T2_Col5,"600 mg");
+        values.put(T2_Col6,"11");
+        values.put(T2_Col7,"15");
+        values.put(T2_Col8,"14");
+        db.insert(Table4, null, values);
+        count++;
+
+        values.put(T2_Col1,count);
+        values.put(T2_Col2,"Urbifen");
+        values.put(T2_Col3,"16");
+        values.put(T2_Col4,"Tablet");
+        values.put(T2_Col5,"50mg");
+        values.put(T2_Col6,"12");
+        values.put(T2_Col7,"16");
+        values.put(T2_Col8,"14");
+        db.insert(Table4, null, values);
+        count++;
+
+        values.put(T2_Col1,count);
+        values.put(T2_Col2,"Normotil");
+        values.put(T2_Col3,"17");
+        values.put(T2_Col4,"Capsule");
+        values.put(T2_Col5,"2mg");
+        values.put(T2_Col6,"3");
+        values.put(T2_Col7,"17");
+        values.put(T2_Col8,"15");
+        db.insert(Table4, null, values);
+        count++;
+
+        values.put(T2_Col1,count);
+        values.put(T2_Col2,"Fiberlax Ultra Effervescent GR");
+        values.put(T2_Col3,"18");
+        values.put(T2_Col4,"Sachet");
+        values.put(T2_Col5,"3.5mg+135mg");
+        values.put(T2_Col6,"10");
+        values.put(T2_Col7,"18");
+        values.put(T2_Col8,"16");
+        db.insert(Table4, null, values);
+        count++;
+
+
     }
 
     public String searchPass(String uname){
