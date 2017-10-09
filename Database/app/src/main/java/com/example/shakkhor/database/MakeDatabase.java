@@ -82,6 +82,7 @@ public class MakeDatabase  extends SQLiteOpenHelper {
         insertIndications(db);
         insertGenre(db);
         insertCompany(db);
+        insertDrugs(db);
     }
     public void insertIndications(SQLiteDatabase db){
         //db = this.getWritableDatabase();
@@ -481,7 +482,7 @@ public class MakeDatabase  extends SQLiteOpenHelper {
 
     public void insertDrugs(SQLiteDatabase db){
 
-        String query = "select * from " + Table4;
+        String query = "select * from " + Table2;
         Cursor cursor = db.rawQuery(query, null);
         int count = cursor.getCount();
 
@@ -495,7 +496,7 @@ public class MakeDatabase  extends SQLiteOpenHelper {
         values.put(T2_Col6,"0");
         values.put(T2_Col7,"0");
         values.put(T2_Col8,"0");
-        db.insert(Table4, null, values);
+        db.insert(Table2, null, values);
         count++;
 
 
@@ -507,7 +508,7 @@ public class MakeDatabase  extends SQLiteOpenHelper {
         values.put(T2_Col6,"1");
         values.put(T2_Col7,"1");
         values.put(T2_Col8,"1");
-        db.insert(Table4, null, values);
+        db.insert(Table2, null, values);
         count++;
 
         values.put(T2_Col1,count);
@@ -518,7 +519,7 @@ public class MakeDatabase  extends SQLiteOpenHelper {
         values.put(T2_Col6,"2");
         values.put(T2_Col7,"2");
         values.put(T2_Col8,"2");
-        db.insert(Table4, null, values);
+        db.insert(Table2, null, values);
         count++;
 
         values.put(T2_Col1,count);
@@ -529,7 +530,7 @@ public class MakeDatabase  extends SQLiteOpenHelper {
         values.put(T2_Col6,"3");
         values.put(T2_Col7,"3");
         values.put(T2_Col8,"3");
-        db.insert(Table4, null, values);
+        db.insert(Table2, null, values);
         count++;
 
         values.put(T2_Col1,count);
@@ -540,7 +541,7 @@ public class MakeDatabase  extends SQLiteOpenHelper {
         values.put(T2_Col6,"4");
         values.put(T2_Col7,"4");
         values.put(T2_Col8,"4");
-        db.insert(Table4, null, values);
+        db.insert(Table2, null, values);
         count++;
 
         values.put(T2_Col1,count);
@@ -551,7 +552,7 @@ public class MakeDatabase  extends SQLiteOpenHelper {
         values.put(T2_Col6,"5");
         values.put(T2_Col7,"5");
         values.put(T2_Col8,"5");
-        db.insert(Table4, null, values);
+        db.insert(Table2, null, values);
         count++;
 
         values.put(T2_Col1,count);
@@ -562,7 +563,7 @@ public class MakeDatabase  extends SQLiteOpenHelper {
         values.put(T2_Col6,"6");
         values.put(T2_Col7,"6");
         values.put(T2_Col8,"6");
-        db.insert(Table4, null, values);
+        db.insert(Table2, null, values);
         count++;
 
         values.put(T2_Col1,count);
@@ -573,7 +574,7 @@ public class MakeDatabase  extends SQLiteOpenHelper {
         values.put(T2_Col6,"7");
         values.put(T2_Col7,"6");
         values.put(T2_Col8,"6");
-        db.insert(Table4, null, values);
+        db.insert(Table2, null, values);
         count++;
 
         values.put(T2_Col1,count);
@@ -584,7 +585,7 @@ public class MakeDatabase  extends SQLiteOpenHelper {
         values.put(T2_Col6,"2");
         values.put(T2_Col7,"7");
         values.put(T2_Col8,"7");
-        db.insert(Table4, null, values);
+        db.insert(Table2, null, values);
         count++;
 
         values.put(T2_Col1,count);
@@ -595,7 +596,7 @@ public class MakeDatabase  extends SQLiteOpenHelper {
         values.put(T2_Col6,"8");
         values.put(T2_Col7,"8");
         values.put(T2_Col8,"8");
-        db.insert(Table4, null, values);
+        db.insert(Table2, null, values);
         count++;
 
         values.put(T2_Col1,count);
@@ -606,7 +607,7 @@ public class MakeDatabase  extends SQLiteOpenHelper {
         values.put(T2_Col6,"4");
         values.put(T2_Col7,"9");
         values.put(T2_Col8,"9");
-        db.insert(Table4, null, values);
+        db.insert(Table2, null, values);
         count++;
 
 
@@ -618,7 +619,7 @@ public class MakeDatabase  extends SQLiteOpenHelper {
         values.put(T2_Col6,"8");
         values.put(T2_Col7,"10");
         values.put(T2_Col8,"10");
-        db.insert(Table4, null, values);
+        db.insert(Table2, null, values);
         count++;
 
         values.put(T2_Col1,count);
@@ -629,7 +630,7 @@ public class MakeDatabase  extends SQLiteOpenHelper {
         values.put(T2_Col6,"3");
         values.put(T2_Col7,"11");
         values.put(T2_Col8,"11");
-        db.insert(Table4, null, values);
+        db.insert(Table2, null, values);
         count++;
 
         values.put(T2_Col1,count);
@@ -640,7 +641,7 @@ public class MakeDatabase  extends SQLiteOpenHelper {
         values.put(T2_Col6,"9");
         values.put(T2_Col7,"12");
         values.put(T2_Col8,"12");
-        db.insert(Table4, null, values);
+        db.insert(Table2, null, values);
         count++;
 
         values.put(T2_Col1,count);
@@ -651,7 +652,7 @@ public class MakeDatabase  extends SQLiteOpenHelper {
         values.put(T2_Col6,"2");
         values.put(T2_Col7,"13");
         values.put(T2_Col8,"13");
-        db.insert(Table4, null, values);
+        db.insert(Table2, null, values);
         count++;
 
 
@@ -663,7 +664,7 @@ public class MakeDatabase  extends SQLiteOpenHelper {
         values.put(T2_Col6,"10");
         values.put(T2_Col7,"14");
         values.put(T2_Col8,"14");
-        db.insert(Table4, null, values);
+        db.insert(Table2, null, values);
         count++;
 
         values.put(T2_Col1,count);
@@ -674,7 +675,7 @@ public class MakeDatabase  extends SQLiteOpenHelper {
         values.put(T2_Col6,"11");
         values.put(T2_Col7,"15");
         values.put(T2_Col8,"14");
-        db.insert(Table4, null, values);
+        db.insert(Table2, null, values);
         count++;
 
         values.put(T2_Col1,count);
@@ -685,7 +686,7 @@ public class MakeDatabase  extends SQLiteOpenHelper {
         values.put(T2_Col6,"12");
         values.put(T2_Col7,"16");
         values.put(T2_Col8,"14");
-        db.insert(Table4, null, values);
+        db.insert(Table2, null, values);
         count++;
 
         values.put(T2_Col1,count);
@@ -696,7 +697,7 @@ public class MakeDatabase  extends SQLiteOpenHelper {
         values.put(T2_Col6,"3");
         values.put(T2_Col7,"17");
         values.put(T2_Col8,"15");
-        db.insert(Table4, null, values);
+        db.insert(Table2, null, values);
         count++;
 
         values.put(T2_Col1,count);
@@ -707,10 +708,49 @@ public class MakeDatabase  extends SQLiteOpenHelper {
         values.put(T2_Col6,"10");
         values.put(T2_Col7,"18");
         values.put(T2_Col8,"16");
-        db.insert(Table4, null, values);
+        db.insert(Table2, null, values);
         count++;
 
 
+    }
+
+    public ArrayList<String> getDrugs(){
+        ArrayList<String> drugs = new ArrayList<String>();
+        db = this.getReadableDatabase();
+        String query = "select Drug_Name from " + Table2;
+        Cursor cursor = db.rawQuery(query, null);
+        if(cursor.moveToFirst()){
+            do{
+                drugs.add(cursor.getString(0));
+            }while (cursor.moveToNext());
+        }
+        return  drugs;
+    }
+
+    public ArrayList<String> getDrugByClass(int classID){
+        ArrayList<String> drugs = new ArrayList<String>();
+        db = this.getReadableDatabase();
+        String query = "select Drug_Name from " + Table2 + " where Drug_Class = " + Integer.toString(classID);
+        Cursor cursor = db.rawQuery(query, null);
+        if(cursor.moveToFirst()){
+            do{
+                drugs.add(cursor.getString(0));
+            }while (cursor.moveToNext());
+        }
+        return drugs;
+    }
+
+    public ArrayList<String> getDrugByIndication(int indicationID){
+        ArrayList<String> drugs = new ArrayList<String>();
+        db = this.getReadableDatabase();
+        String query = "select Drug_Name from " + Table2 + " where Drug_Indication = " + Integer.toString(indicationID);
+        Cursor cursor = db.rawQuery(query, null);
+        if(cursor.moveToFirst()){
+            do{
+                drugs.add(cursor.getString(0));
+            }while (cursor.moveToNext());
+        }
+        return drugs;
     }
 
     public String searchPass(String uname){

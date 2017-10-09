@@ -1,5 +1,6 @@
 package com.example.shakkhor.database;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -21,6 +22,7 @@ public class Drug_By_Indication extends AppCompatActivity {
     ListView listView;
     ArrayAdapter<String> adapter;
     ArrayList<String> indications;
+    static int indication_id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +31,7 @@ public class Drug_By_Indication extends AppCompatActivity {
         toolbar = (Toolbar)findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
         indications = helper.getIndications();
-        Collections.sort(indications);
+        //Collections.sort(indications);
         listView = (ListView)findViewById(R.id.list_indication);
         adapter = new ArrayAdapter<String>(this, R.layout.list_view_custom_layout, R.id.list_item, indications);
 
@@ -37,7 +39,18 @@ public class Drug_By_Indication extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                setIndication_id(position);
+                Intent intent = new Intent(Drug_By_Indication.this, Drug_From_Indication.class);
+                startActivity(intent);
             }
         });
+    }
+
+    public static int getIndication_id() {
+        return indication_id;
+    }
+
+    public void setIndication_id(int indication_id) {
+        this.indication_id = indication_id;
     }
 }
