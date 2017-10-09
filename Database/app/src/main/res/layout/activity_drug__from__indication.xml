@@ -4,26 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.shakkhor.database.Search">
+    tools:context="com.example.shakkhor.database.Drug_From_Indication">
 
     <include
         android:id="@+id/app_bar"
-        layout="@layout/app_bar">
-
-    </include>
-
-    <android.support.v7.widget.SearchView
-        android:id="@+id/search_view"
+        layout="@layout/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/app_bar"
-        android:queryHint="Search">
-
-    </android.support.v7.widget.SearchView>
+        android:layout_height="wrap_content"></include>
 
     <ListView
-        android:id="@+id/list_drug"
+        android:id="@+id/list_drug_by_indication"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/search_view"></ListView>
+        android:layout_below="@+id/app_bar"></ListView>
+
 </RelativeLayout>

@@ -1,5 +1,6 @@
 package com.example.shakkhor.database;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
@@ -22,6 +23,7 @@ public class Drug_By_Class extends AppCompatActivity {
     ArrayAdapter<String> adapter;
     ArrayList<String> classes;
     Toolbar toolbar;
+    static int class_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +34,7 @@ public class Drug_By_Class extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         classes = helper.getClasses();
-        Collections.sort(classes);
+        //Collections.sort(classes);
         listView = (ListView)findViewById(R.id.list_class);
         adapter = new ArrayAdapter<String>(this, R.layout.list_view_custom_layout, R.id.list_item, classes);
 
@@ -40,7 +42,18 @@ public class Drug_By_Class extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                setClass_id(position);
+                Intent intent = new Intent(Drug_By_Class.this, Drug_From_Class.class);
+                startActivity(intent);
             }
         });
+    }
+
+    public static int getClass_id() {
+        return class_id;
+    }
+
+    public void setClass_id(int class_id) {
+        this.class_id = class_id;
     }
 }

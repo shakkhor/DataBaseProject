@@ -27,7 +27,6 @@
         <activity
             android:name=".UserActivity"
             android:label="@string/title_activity_user">
-
             <intent-filter>
                 <action android:name="com.example.shakkhor.database.UserActivity" />
 
@@ -93,6 +92,20 @@
         <activity android:name=".Job">
             <intent-filter>
                 <action android:name="com.example.shakkhor.database.Job" />
+
+                <category android:name="android.intent.category.APP_BROWSER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Drug_From_Class">
+            <intent-filter>
+                <action android:name="com.example.shakkhor.database.Drug_From_Class" />
+
+                <category android:name="android.intent.category.APP_BROWSER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Drug_From_Indication">
+            <intent-filter>
+                <action android:name="com.example.shakkhor.database.Drug_From_Indication" />
 
                 <category android:name="android.intent.category.APP_BROWSER" />
             </intent-filter>
